@@ -1,0 +1,84 @@
+.welcome-card {
+  width: 100%;
+  height: 50%;
+  background-image: url("~src/assets/images/DeerValleyLivingRoomKitchen.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  border-radius: 0;
+}
+
+.welcome-title {
+  background: #123324;
+  height: 25%;
+  color: white;
+  margin: 2% 0 0 0;
+  position: relative;
+  opacity: 65%;
+  font-size: 50px;
+  font-family: Courgette, sans-serif;
+}
+
+.property-name {
+  font-family: Courgette, sans-serif;
+}
+
+.image-wrapper {
+  display: inline-block;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+ion-content::part(background) {
+    background: #c3dbc9;
+}
+
+.property-image {
+  width: 100%;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+
+.description-label {
+  display: block;
+  font-size: 18px;
+}
+
+.arrow {
+  height: 100%;
+  font-size: 200%;
+  cursor: pointer;
+}
+
+.arrow-col {
+  text-align: center;
+}
+
+ion-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rent-me-row {
+  display: block;
+  text-align: center;
+}
+
+.rent-me-button-airbnb {
+  --background: #fc385c;
+  width: 195px;
+}
+
+.rent-me-button-vrbo {
+  --background: #235abc;
+  width: 195px;
+}
+
+@media(max-width: 962px){
+  .welcome-title {
+    font-size: 25px;
+    padding: 5px;
+  }
+}

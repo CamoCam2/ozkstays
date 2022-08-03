@@ -1,0 +1,22 @@
+  <ion-toolbar class="toolbar">
+    <ion-menu-button class="menu-button" color="dark"></ion-menu-button>
+    <ion-title class="title">ozkstays</ion-title>
+  </ion-toolbar>
+  <ion-split-pane class="split-pane" contentId="main-content" when="{{menuVisible}}">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item class="menu-item" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label class="menu-item-title">{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <a href="https://www.instagram.com/deervalleyhome/" target="_blank" alt="https://www.instagram.com/deervalleyhome/">
+          <ion-icon class="instagram" name="logo-instagram"></ion-icon>
+        </a>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>

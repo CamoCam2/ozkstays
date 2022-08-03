@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-title class="welcome-title">Welcome To Branson!</ion-title>
+  </ion-card>
+
+  <ion-card *ngFor="let property of properties; let i = index">
+    <ion-card-header>
+      <ion-card-title class="property-name">{{property.name}}</ion-card-title>
+      <ion-label class="location-label">{{property.location}}</ion-label>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1" class="arrow-col">
+            <ion-icon *ngIf="property.images.length > 1 && showArrows" (click)="slidePrev()" name="arrow-back" class="arrow"></ion-icon>
+          </ion-col>
+          <ion-col size="10">
+            <swiper #swiper [slidesPerView]="slidesPerView" [autoplay]="{ delay: 5000, disableOnInteraction: disableInteraction }" [loop]="true" [lazy]="{ loadPrevNext: true }">
+              <ng-template swiperSlide *ngFor="let image of property.images">
+                <ion-img class="property-image" src="{{image}}"></ion-img>
+              </ng-template>
+              <div class="swiper-pagination"></div>
+            </swiper>
+          </ion-col>
+          <ion-col size="1" class="arrow-col">
+            <ion-icon *ngIf="property.images.length > 1 && showArrows" (click)="slideNext()" icon="arrow-forward" class="arrow"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-label class="description-label">{{property.description}}</ion-label>
+        </ion-row>
+        <ion-row class="rent-me-row">
+          <ion-button *ngIf="property.buttonTextAirbnb" class="rent-me-button-airbnb" href="{{property.airbnb}}" target="_blank">{{property.buttonTextAirbnb}}</ion-button>
+          <ion-button *ngIf="property.buttonTextVrbo" class="rent-me-button-vrbo" href="{{property.vrbo}}" target="_blank">{{property.buttonTextVrbo}}</ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

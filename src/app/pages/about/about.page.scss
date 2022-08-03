@@ -1,0 +1,50 @@
+ion-content::part(background) {
+  background: #c3dbc9;
+}
+
+.us-img {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-wrapper {
+  height: 200px;
+  width: 100%;
+  margin: 25px auto 25px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.lower-image {
+  height: inherit;
+}
+
+@media(max-width: 962px){
+  .us-img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .image-wrapper {
+    height: auto;
+    width: 100%;
+    margin: 25px 0 25px 0;
+    display: block;
+    justify-content: center;
+  }
+
+  .lower-image {
+    height: inherit;
+  }
+}
+
+.us-txt {
+  width: 75%;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Encode Sans', sans-serif;
+}

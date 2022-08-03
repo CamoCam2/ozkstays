@@ -1,0 +1,13 @@
+ion-content::part(background) {
+  background: #c3dbc9;
+}
+
+.submit-button {
+  margin: 10px 0 10px 10px;
+  --background: #123324;
+}
+
+.contact-text {
+  margin: 0 10px 0 10px;
+  display: block;
+}

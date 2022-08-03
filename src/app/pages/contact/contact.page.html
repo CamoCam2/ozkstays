@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-text class="contact-text">
+    <h1>Have questions? Please provide your full name, email address, and a brief message and we'll get back to you as soon as we can!</h1>
+  </ion-text>
+  <ion-card>
+    <form [formGroup]="contactGroup" (submit)="onSubmit($event)">
+      <ion-item>
+        <ion-label position="stacked">Full Name</ion-label>
+        <ion-input type="text" formControlName="fullName" name="fullName" [required]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" formControlName="email" name="email" [email]="true" [required]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Message</ion-label>
+        <ion-textarea rows="5" maxlength="1000" formControlName="message" name="message" [required]="true"></ion-textarea>
+      </ion-item>
+      <ion-button class="submit-button" type="submit" [disabled]="!contactGroup.valid">Submit</ion-button>
+    </form>
+  </ion-card>
+</ion-content>
+
